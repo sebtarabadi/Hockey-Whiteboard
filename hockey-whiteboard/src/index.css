@@ -1,0 +1,250 @@
+body, html {
+    height: 100%;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/*Styling for descriptive header elements used in brushes and counters column, i.e. 'Players - Blue', and 'Skating with Puck'*/
+h3 {
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    text-decoration: underline;
+}
+
+h4 {
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+}
+
+/*Styling for main container div, grid display is vital in the layout of the centre rink, top and bottom bars, and side columns'*/
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto 1fr auto; 
+    height: 100vh; 
+    gap: 0; 
+}
+
+/*General styling for the top bar, housing drill naming and download functionality*/
+.topBar {
+    display: flex;
+    grid-column: 1 / 4; 
+    background-color: #333;
+    color: white;
+    padding: 1px; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+/*Styling for the Download Drill button*/
+.topBar button{
+    width: fit-content;
+    min-width: 100px;
+    height: 45px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2.5px solid #E0E1E4;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.2s ease-in-out 0ms;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Added below hover and active effects to improve UI design*/
+.topBar button:hover{
+    background-color: #F2F2F2;
+    box-shadow: 0px 0px 20px -18px;
+}
+
+.topBar button:active{
+    transform: scale(0.95);
+}
+
+/*Styling for the Drill Title user input*/
+.topBar input{
+    padding: 5px;
+    font-size: 26px;
+}
+
+/*General styling for the bottom bar, housing the selectable rink backgrounds*/
+.bottomBar {
+    grid-column: 1 / 4; 
+    color: white;
+    padding: 15px; 
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/*Styling for the selectable rink buttons*/
+.bottomBar button{
+    border: 1px solid rgb(0, 0, 0); 
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-left: 20px;
+    background-size: contain;  
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 140px;  
+    height: 85px;
+    cursor: pointer;
+}
+
+/*Hover effects for rink buttons, enhancing UI*/
+.bottomBar button:hover{
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+
+/*Styling for the center rink in the middle of the screen*/
+.rink {
+    grid-column: 2 / 3; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0; 
+    width: 100%; 
+
+}
+
+/*Styling for the left column, housing the brush types and undo redo functionalities*/
+.brushesColumn {
+    grid-column: 1 / 2; 
+    background-color: #f4f4f4;
+    padding: 2px; 
+    margin: 0;
+    overflow-y: auto; 
+    text-align: center;
+    position: relative;
+}
+
+/*Styling for each button inside the left column, ensuring the image is only repeated once and has suitable space between as to not overlap*/
+.brushesColumn button {
+    background-size: contain;  
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 140px;  
+    height: 80px;
+    border: none;  
+    cursor: pointer; 
+    background-color: #f4f4f4;
+}
+
+/*Added hover effects so user clearly sees which brush they are selecting*/
+.brushesColumn button:hover {
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+
+/*Styling for the Counters column on the right hand side*/
+.countersColumn {
+    grid-column: 3 / 4;
+    background-color: #f4f4f4;
+    padding: 2px; 
+    margin: 0; 
+    overflow-y: auto; 
+    align-items: center;
+    text-align: center;
+}
+
+/*Styling for each counter button, ensuring each button is uniform and dont overlap*/
+.countersColumn button {
+    width: 60px;
+    height: 90px;
+    margin: 0px;
+    background-color: #f4f4f4;
+    background-repeat: no-repeat;
+    border: 0px;
+    background-position: center;
+    cursor: pointer;
+
+}
+
+/*Hover effects to enhance UI and UX*/
+.countersColumn button:hover{
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+
+/*Styling for the colour picker, ensuring its clear to see and not a small default box*/
+.colour-picker {
+    width: 290px;              
+    height: 50px;             
+    cursor: pointer;          
+    border-radius: 5px;       
+    padding: 5px;               
+    margin: 0;               
+}
+
+/*Importing all images for use as buttons*/
+
+.counter-cone {background-image: url('./assets/CounterCone.png');}
+.counter-blue-defense {background-image: url('./assets/CounterBlueD.png');}
+.counter-blue-forward {background-image: url('./assets/CounterBlueF.png');}
+.counter-blue-centre {background-image: url('./assets/CounterBlueC.png');}
+.counter-blue-goalie {background-image: url('./assets/CounterBlueG.png');}
+.counter-blue-left-defense {background-image: url('./assets/CounterBlueLD.png');}
+.counter-blue-right-defense {background-image: url('./assets/CounterBlueRD.png');}
+.counter-blue-left-wing {background-image: url('./assets/CounterBlueLW.png');}
+.counter-blue-right-wing {background-image: url('./assets/CounterBlueRW.png');}
+.counter-deker {background-image: url('./assets/CounterDeker.png');}
+.counter-net {background-image: url('./assets/CounterNet.png');}
+.counter-puck {background-image: url('./assets/CounterPuck.png');}
+.counter-puck-bundle {background-image: url('./assets/CounterPuckBundle.png');}
+.counter-red-defense {background-image: url('./assets/CounterRedD.png');}
+.counter-red-forward {background-image: url('./assets/CounterRedF.png');}
+.counter-red-centre {background-image: url('./assets/CounterRedC.png');}
+.counter-red-goalie {background-image: url('./assets/CounterRedG.png');}
+.counter-red-left-defense {background-image: url('./assets/CounterRedLD.png');}
+.counter-red-right-defense {background-image: url('./assets/CounterRedRD.png');}
+.counter-red-left-wing {background-image: url('./assets/CounterRedLW.png');}
+.counter-red-right-wing {background-image: url('./assets/CounterRedRW.png');}
+.counter-tire {background-image: url('./assets/CounterTire.png');}
+
+.counter-cone {background-image: url('./assets/CounterCone.png');}
+.counter-blue-defense {background-image: url('./assets/CounterBlueD.png');}
+.counter-blue-forward {background-image: url('./assets/CounterBlueF.png');}
+.counter-blue-centre {background-image: url('./assets/CounterBlueC.png');}
+.counter-blue-goalie {background-image: url('./assets/CounterBlueG.png');}
+.counter-blue-left-defense {background-image: url('./assets/CounterBlueLD.png');}
+.counter-blue-right-defense {background-image: url('./assets/CounterBlueRD.png');}
+.counter-blue-left-wing {background-image: url('./assets/CounterBlueLW.png');}
+.counter-blue-right-wing {background-image: url('./assets/CounterBlueRW.png');}
+.counter-deker {background-image: url('./assets/CounterDeker.png');}
+.counter-net {background-image: url('./assets/CounterNet.png');}
+.counter-puck {background-image: url('./assets/CounterPuck.png');}
+.counter-puck-bundle {background-image: url('./assets/CounterPuckBundle.png');}
+.counter-red-defense {background-image: url('./assets/CounterRedD.png');}
+.counter-red-forward {background-image: url('./assets/CounterRedF.png');}
+.counter-red-centre {background-image: url('./assets/CounterRedC.png');}
+.counter-red-goalie {background-image: url('./assets/CounterRedG.png');}
+.counter-red-left-defense { background-image: url('./assets/CounterRedLD.png');}
+.counter-red-right-defense {background-image: url('./assets/CounterRedRD.png');}
+.counter-red-left-wing {background-image: url('./assets/CounterRedLW.png');}
+.counter-red-right-wing {background-image: url('./assets/CounterRedRW.png');}
+.counter-tire {background-image: url('./assets/CounterTire.png');}
+
+.icon-skating-puck {background-image: url('./assets/PreviewIconSkatingPuck.png');}
+.icon-backwards-puck {background-image: url('./assets/PreviewIconBackwardsPuck.png');}
+.icon-backwards {background-image: url('./assets/PreviewIconBackwards.png');}
+.icon-lateral-skating {background-image: url('./assets/PreviewIconLateralSkating.png');}
+.icon-pass {background-image: url('./assets/PreviewIconPass.png');}
+.icon-skating {background-image: url('./assets/PreviewIconSkating.png');}
+.icon-shoot {background-image: url('./assets/PreviewIconShoot.png');}
+.icon-eraser {background-image: url('./assets/PreviewIconEraser.png');}
+.icon-undo {background-image: url('./assets/PreviewIconUndo.png');}
+.icon-redo {background-image: url('./assets/PreviewIconRedo.png');}
+.icon-clear {background-image: url('./assets/PreviewIconClear.png');}
+
+.rink-full-rink {background-image: url('./assets/FullBackground.png');}
+.rink-half-rink-right {background-image: url('./assets/BackgroundHalfRinkRight.png');}
+.rink-half-rink-left {background-image: url('./assets/BackgroundHalfRinkLeft.png');}
+.rink-end-zone {background-image: url('./assets/BackgroundEndZone.png');}
+.rink-neutral-zone {background-image: url('./assets/BackgroundNeutralZone.png');}
